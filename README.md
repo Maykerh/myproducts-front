@@ -1,6 +1,6 @@
 ## :computer: Project description
 
-This project consists in a simple interface built in ReactJs that consumes the myproducts-api (https://github.com/Maykerh/myproducts-api)
+This project consists in a simple interface built with ReactJs that consumes the myproducts-api (https://github.com/Maykerh/myproducts-api)
 
 it has just few functions, like user registration, authentication and a CRUD of products. 
 
