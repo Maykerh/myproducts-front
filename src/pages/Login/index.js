@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import { Container } from './styles';
 
 import logo from '../../assets/logo.png';
 
 import { signIn } from './actions';
+import { isSigned } from '../../utils/session';
 
 const Login = () => {
     const [loading, setLoading] = useState(false);
@@ -20,6 +21,10 @@ const Login = () => {
         setLoading(false);
     };
 
+    if (isSigned()) {
+        return <Redirect to="/products" />;
+    }
+
     return (
         <Container>
             <div>
@@ -31,7 +36,7 @@ const Login = () => {
                         labelCol: { span: 8 },
                         wrapperCol: { span: 16 },
                     }}
-                    name="basic"
+                    name="login"
                     initialValues={{ remember: true }}
                     onFinish={onFinish}
                 >

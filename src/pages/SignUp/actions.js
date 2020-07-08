@@ -4,13 +4,11 @@ import history from '../../services/history';
 
 export const signUp = async ({ name, email, password }) => {
     try {
-        const session = await api.post('/session', {
+        await api.post('/users', {
             name,
             email,
             password,
         });
-
-        api.defaults.headers.Authorization = `Bearer ${session.data.token}`;
 
         Notification.success('User registered with success');
 

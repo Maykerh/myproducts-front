@@ -9,10 +9,16 @@ export const signIn = async ({ email, password }) => {
             password,
         });
 
-        api.defaults.headers.Authorization = `Bearer ${session.data.token}`;
+        storeSession(session);
 
         history.push('/products');
     } catch (err) {
         Notification.error(err.response.data.message);
     }
+};
+
+const storeSession = session => {
+    api.defaults.headers.Authorization = `Bearer ${session.data.token}`;
+
+    sessionStorage.setItem('myproducts', JSON.stringify({ signed: true, ...session.data }));
 };

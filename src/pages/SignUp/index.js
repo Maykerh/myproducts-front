@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import { MailOutlined, LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import { Container } from './styles';
 
 import logo from '../../assets/logo.png';
 
 import { signUp as signUpAction } from './actions';
+import { isSigned } from '../../utils/session';
 
 const SignUp = () => {
     const [loading, setLoading] = useState(false);
@@ -19,6 +20,10 @@ const SignUp = () => {
 
         setLoading(false);
     };
+
+    if (isSigned()) {
+        return <Redirect to="/products" />;
+    }
 
     return (
         <Container>
@@ -45,7 +50,12 @@ const SignUp = () => {
                         name="email"
                         rules={[{ required: true, message: 'Please input your email!' }]}
                     >
-                        <Input size={'large'} placeholder={'Email'} prefix={<MailOutlined />} />
+                        <Input
+                            size={'large'}
+                            type="email"
+                            placeholder={'Email'}
+                            prefix={<MailOutlined />}
+                        />
                     </Form.Item>
                     <Form.Item
                         name="password"
