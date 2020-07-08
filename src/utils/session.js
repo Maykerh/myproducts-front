@@ -21,7 +21,6 @@ export const isSigned = () => {
 
 export const validateSession = async () => {
     const sessionData = getSessionData();
-    console.log('chegou');
 
     if (!sessionData || !sessionData.token) {
         return;

@@ -3,11 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 import 'antd/dist/antd.css';
 
 const GlobalStyle = createGlobalStyle`
-
-	@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-	@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
-
-
 	html,
 	body,
 	#root {
@@ -25,14 +20,6 @@ const GlobalStyle = createGlobalStyle`
 
 	body,
 	input,
-	button {
-		font: 14px 'Roboto', sans-serif;
-	}
-
-	button {
-        cursor: pointer;
-    }
-
 	a {
 		text-decoration: none;
 	}

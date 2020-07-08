@@ -1,8 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
-// import { logout } from '../../store/modules/auth/actions';
-
 import { Container, Header, HeaderMenu, HeaderControls, ContentContainer } from './styles';
 
 import logo from '../../assets/logo.png';
