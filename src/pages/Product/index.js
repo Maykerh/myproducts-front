@@ -47,10 +47,10 @@ const Products = () => {
             await deleteProduct(id);
 
             if (!hasRecordsInActualPageAfterDelete()) {
-                setPage(page - 1);
-            } else {
-                setReload(reload + 1);
+                setPage(page > 1 ? page - 1 : 1);
             }
+
+            setReload(reload + 1);
         }
     };
 

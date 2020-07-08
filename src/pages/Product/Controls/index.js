@@ -20,21 +20,18 @@ const Controls = ({ isLoading, onSearch }) => {
             <div>
                 <Input
                     addonBefore={'Name'}
-                    loading={isLoading}
                     style={styles.input}
                     value={name}
                     onChange={t => setName(t.target.value)}
                 />
                 <Input
                     addonBefore={'Category'}
-                    loading={isLoading}
                     style={styles.input}
                     value={category}
                     onChange={t => setCategory(t.target.value)}
                 />
                 <Input
                     addonBefore={'Description'}
-                    loading={isLoading}
                     style={styles.input}
                     value={description}
                     onChange={t => setDescription(t.target.value)}
